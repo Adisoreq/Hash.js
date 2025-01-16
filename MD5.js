@@ -84,7 +84,7 @@ const MD5 = {
                 let temp = D;
                 D = C;
                 C = B;
-                B = (B + rotateLeft(A + F + K[j] + M[g], s[j]), 32) & 0xffffffff;
+                B = (B + rotateLeft(A + F + K[j] + M[g], s[j])) & 0xffffffff;
                 A = temp;
             }
     
