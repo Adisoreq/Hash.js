@@ -1,9 +1,11 @@
 // Byte rotation
-function rotateLeft(x, c, bits) {
-    return (x << c) | (x >> (bits - c));
+function rotateLeft(x, c, signed = false) {
+    return signed ? 
+        (x << c) | (x >> (32 - c)) : 
+        (x << c) | (x >>> (32 - c));
 }
-function rotateRight(x, c, bits) {
-    return (x >> c) | (x << (bits - c));
+function rotateRight(x, c) {
+    return (x >> c) | (x << (32 - c));
 }
 
 // Byte conversion
